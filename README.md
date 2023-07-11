@@ -1,2 +1,2 @@
-# Patika_SQL_HW
-Patika SQL Training
+# Patika SQL Training
+Patika_SQL_HW

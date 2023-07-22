@@ -1,0 +1,22 @@
+SELECT title, length
+FROM film;
+
+SELECT title, length
+FROM film
+WHERE length >= 90 AND length <= 120;
+
+SELECT title, length
+FROM film
+WHERE length
+BETWEEN 90 AND 120;
+-- Limit values 90 and 120 are included
+
+SELECT title, length
+FROM film
+WHERE length 
+NOT BETWEEN 90 AND 120;
+-- length < 90 OR >120
+
+SELECT title, length
+FROM film
+WHERE length <90 OR length >120;

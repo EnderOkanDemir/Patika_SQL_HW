@@ -31,6 +31,6 @@ LIMIT 10;
 SELECT *
 FROM actor
 WHERE first_name ='Penelope'
-ORDER BY last_name;
+ORDER BY last_name
 OFFSET 2
 LIMIT 1;

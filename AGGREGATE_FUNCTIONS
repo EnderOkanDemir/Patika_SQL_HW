@@ -42,3 +42,22 @@ FROM film;
 SELECT MAX(length)
 FROM film
 WHERE rental_rate = 0.99; 
+
+
+SELECT MAX(length)
+FROM film
+WHERE rental_rate IN(0.99,2.99,4.99);
+-- output = 185
+
+SELECT MAX(length)
+FROM film
+WHERE rental_rate IN(1.99,2.99,0.99);
+-- it returns the longest film for rental_rate 1.99, 2.99, 4.99
+-- output = 185
+
+
+-- another solution to check the query above
+SELECT length
+FROM film
+WHERE rental_rate IN(1.99,2.99,0.99)
+ORDER BY length DESC;

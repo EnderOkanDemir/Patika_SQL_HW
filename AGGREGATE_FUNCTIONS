@@ -61,3 +61,15 @@ SELECT length
 FROM film
 WHERE rental_rate IN(1.99,2.99,0.99)
 ORDER BY length DESC;
+
+
+-- Counts the number of movies with 0.99, 2.99 and 4.99 rental_rate
+SELECT rental_rate, COUNT(*)
+FROM film
+GROUP BY rental_rate
+HAVING rental_rate IN(0.99, 2.99, 4.99);
+
+"rental_rate"	"count"
+2.99          	323
+4.99          	336
+0.99          	341

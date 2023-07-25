@@ -1,0 +1,44 @@
+SELECT COUNT(*) 
+FROM film;
+
+
+SELECT MAX(replacement_cost)
+FROM film;
+
+-- another solution for the query above
+SELECT replacement_cost
+FROM film
+ORDER BY replacement_cost DESC
+LIMIT 1;
+
+
+SELECT MIN(replacement_cost)
+FROM film;
+
+
+SELECT AVG(length)	
+FROM film;
+-- output = 115.2720000000000000
+
+
+SELECT ROUND(AVG(length),3)
+FROM film; 
+-- output = 115272
+-- sets the number of decimal characters to 3
+
+
+SELECT SUM(rental_rate) 
+FROM film;
+-- output = 2980.00
+
+
+SELECT MAX(length), MIN(length), SUM(replacement_cost)
+FROM film;
+-- output is below
+"max"	"min"	"sum"
+ 185	 46		19984.00
+ 
+ 
+SELECT MAX(length)
+FROM film
+WHERE rental_rate = 0.99; 

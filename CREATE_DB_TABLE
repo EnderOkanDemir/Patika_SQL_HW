@@ -1,0 +1,24 @@
+CREATE TABLE <table_name>
+( 
+	<column_name> <data_type> <constraint>,
+	...
+	<column_name> <data_type> <constraint>;
+)
+-- <constraint> kısıt
+-- columns has 3 specific feature <column_name>, <data_type> and <constraint>,
+
+CREATE TABLE author
+( 
+	id SERIAL PRIMARY KEY,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	email VARCHAR(100),
+	birthday DATE
+	
+);
+
+-- SERIAL datatype helps data to increase automatically
+-- VARCHAR is character varying(50) which means "değişen karakter sayısı 50"
+
+SELECT *
+FROM author;

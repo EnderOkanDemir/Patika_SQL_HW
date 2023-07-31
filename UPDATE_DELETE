@@ -1,0 +1,11 @@
+-- Go to mockaroo.com
+-- Create a table by adding or deleting fields
+-- specify #Rows
+-- Format : SQL
+-- Table Name : The table name can be as same as the table name you use in your current table in Postgresql and you can add the data to this current table, or you can create a new table with a new name.
+-- If you add a field for example "birthday", in this case, we should select the  "Datetime" for the "Type" field, and the format should be yyyy-mm-dd
+-- You can enter a "blank" rate in the "Option" field if you need
+-- Then press the "Preview" button and select the data by using mouse and copy it
+-- Paste this data to the query tool and Execute it
+
+

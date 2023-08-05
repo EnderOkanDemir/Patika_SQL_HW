@@ -3,7 +3,9 @@
 -- Primary Key (PK) : Satırda bulunan veriyi diğer verilerden ayrıştırmayı sağlar. 
 -- 					Benzersiz tanımlayıcıdırlar.
 -- 					Asıl veriyi diğer verilerden ayrıştıracak bir identifier dır.
+-- 					Bir tabloda sadece bir tane primary key bulunur.
 -- Foreign Key(FK): Tablolar arasında köprü oluşturmaya sağlayan aynı isimli ve içerikli kolonlardır.
+-- 					Bir tabloda birden fazla foreign key bulunabilir.
 -- Bir tabloda primary key olurken bu kolon başka bir tabloda primary key değildir. Yani foreign key' dir.
 
 CREATE TABLE book
@@ -52,3 +54,12 @@ insert into book (title, page_number, author_id) values ('Jackass 3.5', 834, 1);
 insert into book (title, page_number, author_id) values ('Baby On Board', 339, 7);
 
 insert into book (title, page_number, author_id) values ('Making Plans for Lena (Non ma fille, tu n''iras pas danser)', 375, 7);
+
+
+ERROR:  insert or update on table "book" violates foreign key constraint "book_author_id_fkey"
+DETAIL:  Key (author_id)=(6) is not present in table "author".
+SQL state: 23503
+
+-- Bu hatanın sebebi eşleştirme yapılacak tabloda id sütununda 6 numaralı bir satırın olmamasıdır. Bu sebeple 6 yerine başka bir id numarası girilmelidir.
+
+

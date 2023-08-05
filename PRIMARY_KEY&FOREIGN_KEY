@@ -61,5 +61,7 @@ DETAIL:  Key (author_id)=(6) is not present in table "author".
 SQL state: 23503
 
 -- Bu hatanın sebebi eşleştirme yapılacak tabloda id sütununda 6 numaralı bir satırın olmamasıdır. Bu sebeple 6 yerine başka bir id numarası girilmelidir.
+-- Yani bu kod ile book tablosuna veri eklerken aynı zamanda eklediğimiz bu verilerin author tablosunda kime ait olduğunu bulmamıza yardımcı id değerlerini de ekledik.
+-- Daha sonra istersek her iki tabloda da bulunan bu id değerlerinden faydalanarak iki tabloyu birleştirebiliriz veya her iki tablodan da veri çekip gruplayabiliriz.
 
 

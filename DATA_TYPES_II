@@ -1,0 +1,31 @@
+-- CHARACTER TYPES
+
+SELECT ('Lorem'::CHAR(10));
+-- Lorem   
+-- There are 5 blanks after 'Lorem'
+
+
+SELECT ('Lorem ipsum dolar sit amet'::CHAR(10));
+-- Lorem ipsu
+
+
+SELECT ('Lorem'::VARCHAR(10));
+-- Lorem	
+-- There is no blank after 'Lorem'
+
+
+SELECT ('Lorem ipsum dolar sit amet'::VARCHAR(10));
+-- Lorem ipsu
+
+
+SELECT ('Lorem ipsum dolar sit amet'::VARCHAR);
+-- If we don't specify any number for 'VARCHAR', it will act as the character number is the max number
+-- Lorem ipsum dolar sit amet
+
+
+SELECT ('Lorem'::TEXT);
+-- Lorem
+
+
+SELECT ('Lorem ipsum dolar sit amet'::TEXT);
+-- Lorem ipsum dolar sit amet

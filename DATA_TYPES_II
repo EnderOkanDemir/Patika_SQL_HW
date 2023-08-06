@@ -111,7 +111,9 @@ SELECT ('03:44:11'::TIME);
 
 
 SELECT ('02:16::TIME WITH TIME ZONE');
--- 02:16::TIME WITH TIME ZONE
+-- 02:16:00+03:00
+-- UTC time = Coordinated Universal Time
+-- It indicates that +03:00 hours were added to the UTC time; the actual time is 23:16.
 
 
 SELECT ('1980 December 03 02:16:07':: TIMESTAMP);

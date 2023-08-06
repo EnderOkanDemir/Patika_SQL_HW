@@ -42,4 +42,3 @@ WHERE MOD(ID,2)=0;
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY) AS DIFFERENCE
 FROM STATION;
 
--- Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.

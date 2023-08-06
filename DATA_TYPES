@@ -15,6 +15,7 @@ VALUES
 
 
 "real_type"			"double_type"				"numeric_type"
+real				double precision			numeric
 1.1234568			1.1234567891234568			1.12345678912345678912
 6 decimal digits		15 decimal digits precision		user-specified precision, exact	
 7. yi yuvarlamış		16. yı yuvarlamış
@@ -51,12 +52,60 @@ SELECT *
 FROM test2;
 
 
-"float4"			"float8"				"decimal_type"
+"float4_type"			"float8_type"				"decimal_type"
+real				double precision			numeric
 1.1234568			1.1234567891234568			1.12345678912345678912
 
 
 
+SELECT (10+2);
+
+-- ?column?
+-- integer  
+-- 12
 
 
+SELECT (10.0);
 
+-- ?column?
+-- numeric  
+-- 10.0
+
+
+SELECT (10.0::INTEGER);
+
+-- int4
+-- integer  
+-- 10.0
+
+
+SELECT (10.666666666666666666666666666::INTEGER);
+
+-- int4
+-- integer  
+-- 11
+
+
+SELECT (10.666666666666666666666666666::REAL);
+
+-- float4
+-- real  
+-- 10.666667
+
+
+SELECT (10.666666666666666666666666666::DOUBLE PRECISION);
+
+-- float8
+-- double precision  
+-- 10.666666666666666
+
+
+SELECT (10.666666666666666666666666666::NUMERIC);
+
+-- numeric
+-- numeric
+-- 10.666666666666666666666666666
+
+-- Genel olarak sayısal verilerle çalışırken tam sayı istiyorsak integer ve ondalık istiyorsak numeric veri tipi ile çalışıyoruz.
+-- In general, operating with numeric scales, if we want integers, we work with integers and if we want decimals, we work with numeric data type.
 

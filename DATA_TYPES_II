@@ -29,3 +29,49 @@ SELECT ('Lorem'::TEXT);
 
 SELECT ('Lorem ipsum dolar sit amet'::TEXT);
 -- Lorem ipsum dolar sit amet
+
+---------------------------------------------------------------------------------------------------------------------------
+
+-- Boolean constants can be represented in SQL queries by the SQL keywords TRUE, FALSE, and NULL.
+
+-- The datatype input function for type boolean accepts these string representations for the “true” state:
+
+-- true
+-- yes
+-- on
+-- 1
+-- and these representations for the “false” state:
+
+-- false
+-- no
+-- off
+-- 0
+-- Unique prefixes of these strings are also accepted, for example, t or n. Leading or trailing whitespace is ignored, and the case does not matter.
+-- Bu dizelerin benzersiz önekleri de kabul edilir, örneğin t veya n. Baştaki veya sondaki boşluk yoksayılır ve büyük/küçük harf fark etmez.
+
+
+-- BOOLEAN TYPES
+
+-- SELECT (true,'yes','t',1) TRUE
+-- SELECT (false,'no','n',0) FALSE
+
+
+SELECT ('no'::BOOLEAN);
+-- false
+
+SELECT (1::BOOLEAN);
+-- true
+
+
+SELECT ('f'::BOOLEAN);
+-- false
+
+
+SELECT ('true'::BOOLEAN);
+-- true
+
+
+SELECT (NULL::BOOLEAN);
+-- [null]
+
+---------------------------------------------------------------------------------------------------------------------------

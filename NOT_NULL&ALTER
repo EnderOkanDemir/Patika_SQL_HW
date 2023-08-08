@@ -47,8 +47,29 @@ SET NOT NULL;
 
 -- ERROR:  column "username" of relation "users" contains null values
 -- We don't want the rows without the username; therefore, we can delete these rows.
--- alter : change, modify, replace, vary, değiştirmek
+-- alter: change, modify, replace, vary, değiştirmek
 
 
 DELETE FROM users
 WHERE username = NULL;
+
+-- Output: DELETE 0, because we shouldn't use 'WHERE username = NULL'; the correct form of the code is 'WHERE username IS NULL'.
+
+DELETE FROM users
+WHERE username IS NULL;
+
+-- If we want to see what we deleted, we can use 'RETURNING *'
+
+DELETE FROM users
+WHERE username IS NULL
+RETURNING *;
+
+SELECT *
+FROM users;
+
+-- "id"		"username"	"email"			"age"
+-- 1		"tester"	"tester@gmail.com"	23
+
+
+
+

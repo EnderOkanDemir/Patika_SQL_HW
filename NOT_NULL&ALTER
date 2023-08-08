@@ -1,0 +1,54 @@
+-- Constraints help us limit the data we enter into a column.
+-- A Primary Key (PK) or Foreign Key (FK) is a constraint.
+
+CREATE TABLE users
+(
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(20),
+	email VARCHAR(50),
+	age INTEGER
+);
+
+
+INSERT INTO users(username, email, age) 
+VALUES
+	('tester','tester@gmail.com',23);
+	
+	
+INSERT INTO users(email, age) 
+VALUES
+	('gamer@gmail.com',35);
+ 
+ 
+SELECT *
+FROM users;
+
+-- "id"		"username"	"email"					"age"
+-- 1		"tester"	"tester@gmail.com"		23
+-- 2		[null]		"gamer@gmail.com"		35
+-- 'username' cannot be null, so we should add a constraint to the 'username' column.
+
+
+-- Normally we should write the following query if we want 'NOT NULL' for the username column but we already create the table.
+-- So, we need to use the 'ALTER' function instead.
+
+CREATE TABLE users
+(
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(20) NOT NULL,
+	email VARCHAR(50),
+	age INTEGER
+);
+
+
+ALTER TABLE users
+ALTER COLUMN username
+SET NOT NULL;
+
+-- ERROR:  column "username" of relation "users" contains null values
+-- We don't want the rows without the username; therefore, we can delete these rows.
+-- alter : change, modify, replace, vary, değiştirmek
+
+
+DELETE FROM users
+WHERE username = NULL;

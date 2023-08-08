@@ -71,5 +71,49 @@ FROM users;
 -- 1		"tester"	"tester@gmail.com"	23
 
 
+ALTER TABLE users
+ALTER COLUMN username
+SET NOT NULL;
 
+
+INSERT INTO users(email, age) 
+VALUES
+	('gamer@gmail.com',35);
+
+
+SELECT *
+FROM users;
+
+-- ERROR:  null value in column "username" of relation "users" violates not-null constraint
+-- DETAIL:  Failing row contains (3, null, gamer@gmail.com, 35).
+-- This means we should enter a username otherwise it doesn't possible to enter data
+
+INSERT INTO users(username,email, age) 
+VALUES
+	('gamer','gamer@gmail.com',35);
+	
+	
+SELECT *
+FROM users;
+
+
+-- NULL doesn't mean zero (0). They are not the same.
+-- NULL means that no data exists or it is missing.
+-- Blank doesn't mean NULL either. Blank means it is okay whether we have for example email or not.
+-- Blank doesn't mean NULL either. Instead, a blank signifies that it's acceptable whether we have, for example, an email or not.
+
+
+INSERT INTO users(username,email,age) 
+VALUES
+	(' ','architect@gmail.com',38);
+	
+
+SELECT *
+FROM users;
+
+
+"id"	"username"	"email"			"age"
+1	"tester"	"tester@gmail.com"	23
+5	"gamer"		"gamer@gmail.com"	35
+6			"architect@gmail.com"	38
 

@@ -74,5 +74,5 @@ SELECT *
 FROM users;
 
 
-NOTE: We can see all the constraints under the column headings on the left.
-Soldaki sütun başlıkları altında tüm kısıtlamaları görebiliriz.
+NOTE: We can see all the constraints under the column - constraints headings on the left.
+Tüm kısıtları soldaki sütun - kısıtlamalar başlığı altında görebiliriz.

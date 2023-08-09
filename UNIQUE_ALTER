@@ -42,9 +42,9 @@ ADD UNIQUE (email);
 
 -- ERROR:  could not create unique index "users_email_key"
 -- DETAIL:  Key (email)=(tester@gmail.com) is duplicated.
--- First of all we need to correct the tester@gmail.com as tester2@gmail.com 
+-- First of all, we need to correct the tester@gmail.com as tester2@gmail.com 
 -- Firstly, we need to update 'tester@gmail.com' to 'tester2@gmail.com'.
--- We can do that on the table by clicking twice on tester@gmail.com; then, we need to save the changes.
+-- We can do that on the table by clicking twice on tester@gmail.com or using the 'update' function; then, we need to save the changes.
 -- F6 is used to save the data changes.
 
 

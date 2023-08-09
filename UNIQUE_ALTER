@@ -1,0 +1,74 @@
+SELECT * 
+FROM users;
+
+INSERT INTO users(username, email, age)
+VALUES
+	('tester2','tester@gmail.com', 44)
+RETURNING *;
+
+-- We inserted another row to the 'users' table with a different username and age but also an existing email.
+-- However, if we want to prevent mistakes by entering the same data into a specific column, we use unique.
+
+
+SELECT * 
+FROM users;
+
+
+CREATE TABLE users
+(
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(20) NOT NULL,
+	email VARCHAR(50) UNIQUE,
+	age INTEGER
+);
+
+
+-- We should specify whether the column is unique or not when we create the table.
+-- However, we have already created the table as shown below.
+
+CREATE TABLE users
+(
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(20) NOT NULL,
+	email VARCHAR(50) UNIQUE,
+	age INTEGER
+);
+
+
+-- Therefore we have to use the second method.
+
+ALTER TABLE users
+ADD UNIQUE (email);
+
+-- ERROR:  could not create unique index "users_email_key"
+-- DETAIL:  Key (email)=(tester@gmail.com) is duplicated.
+-- First of all we need to correct the tester@gmail.com as tester2@gmail.com 
+-- Firstly, we need to update 'tester@gmail.com' to 'tester2@gmail.com'.
+-- We can do that on the table by clicking twice on tester@gmail.com; then, we need to save the changes.
+-- F6 is used to save the data changes.
+
+
+SELECT * 
+FROM users;
+
+
+ALTER TABLE users
+ADD UNIQUE (email);
+
+
+INSERT INTO users(username, email, age)
+VALUES
+	('tester3', 'tester2@gmail.com', 38);
+	
+-- ERROR:  duplicate key value violates unique constraint "users_email_key"
+-- DETAIL:  Key (email)=(tester2@gmail.com) already exists.
+-- We tried to add a row with an existing email then we got that error
+
+
+INSERT INTO users(username, email, age)
+VALUES
+	('tester3', 'tester3@gmail.com', 38);
+	
+	
+SELECT * 
+FROM users;

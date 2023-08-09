@@ -1,0 +1,14 @@
+SELECT * 
+FROM users;
+
+INSERT INTO users(username, email, age)
+VALUES
+	('tester2','tester@gmail.com', 44)
+RETURNING *;
+
+-- We inserted another row to the users table with a different username and age but also an existing email.
+-- However, if we want to prevent doing mistake by entering same data, we use unique.
+
+
+SELECT * 
+FROM users;

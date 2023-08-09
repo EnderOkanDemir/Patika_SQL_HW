@@ -1,0 +1,11 @@
+-- We can delete a table as well.
+
+DROP TABLE author4;
+-- ERROR:  table "author4" does not exist
+
+-- So, we can use the following code not to get such output
+DROP TABLE IF EXISTS author4;
+-- NOTICE:  table "author4" does not exist, skipping DROP TABLE
+
+DROP TABLE IF EXISTS author3;
+DROP TABLE author2;

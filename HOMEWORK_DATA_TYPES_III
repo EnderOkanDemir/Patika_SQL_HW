@@ -47,3 +47,28 @@ JOIN packages as ssalaries on f.id = ssalaries.id
 JOIN packages as fsalaries on f.friend_id = fsalaries.id
 where fsalaries.salary > ssalaries.salary
 order by fsalaries.salary;
+
+
+
+-- You are given a table, Functions, containing two columns: X and Y.
+-- Two pairs (X1, Y1) and (X2, Y2) are said to be symmetric pairs if X1 = Y2 and X2 = Y1.
+-- Write a query to output all such symmetric pairs in ascending order by the value of X. List the rows such that X1 ≤ Y1.
+
+select distinct a.ax1,a.ay1 from
+(
+select a.x1 ax1, a.y1 ay1 , a.r1 ar1 , b.r2 br2 from
+(select row_number() over(order by f1.x) r1 , 
+       f1.x x1, 
+       f1.y y1 from functions f1) a
+inner join
+(select row_number() over(order by f2.x) r2 , 
+       f2.x x2, 
+       f2.y y2 from functions f2) b
+on a.x1 = b.y2
+and b.x2 = a.y1
+) a
+where 
+a.ar1<>a.br2
+and a.ax1 <= a.ay1
+order by a.ax1
+;

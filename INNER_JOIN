@@ -54,3 +54,8 @@ ON book.id = book.author_id;
 -- These two tables will yield the same output for us, as the query utilizes the intersecting columns of the two tables.
 -- Tables are joined using intersection columns as references. If there is no common column, we won't see this data in the final table as a result of the join. 
 -- Tables are joined using intersection columns as references. If there are no common columns, the final table will not include this data.
+
+SELECT * 
+FROM Categories
+INNER JOIN Products
+ON Categories.CategoryID = Products.CategoryID;

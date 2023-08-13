@@ -1,14 +1,45 @@
--- First we deleted the table we created to study. Becuse we don't need them.
+-- First, we deleted the table we created to study. Because we don't need them.
 
 DROP TABLE test;
 
-
 DROP TABLE test2;
 
-
 DROP TABLE users;
+
 
 -- Foreign key : Primary key leri başka tablolarda referans olarak kullanan sütunlardır. 
 -- Örneğin primary key sütunundan id si 5 olan bir yazar olsun. Başka bir tabloda ise kitap isimleri olsun.
 -- O yazara ait kitapların hepsinin karşısında author_id sütununda 5 yazacaktır. 
 -- Buradaki author_id sütunu foreign_key dir.
+
+
+-- We join the tables on a common column using the 'JOIN' function.
+
+SELECT title, first_name, last_name
+FROM book
+INNER JOIN author 
+ON author.id = book.author_id;
+
+
+SELECT *
+FROM book
+INNER JOIN author 
+ON author.id = book.author_id;
+
+-- In the table resulting from the query, we can observe the common columns that we have aligned side by side.
+-- We could still perform a "join" even if the columns used as references were not defined as "foreign keys".
+-- perform: gerçekleştirmek
+
+
+SELECT *
+FROM book
+JOIN author 
+ON author.id = book.author_id;
+
+-- If we simply (just) use 'JOIN' instead of 'INNER JOIN,' it will be accepted as an 'INNER JOIN' by default.
+
+
+SELECT book.title, author.first_name, author.last_name
+FROM book
+INNER JOIN author 
+ON author.id = book.author_id;

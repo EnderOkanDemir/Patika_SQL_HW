@@ -1,0 +1,67 @@
+CREATE TABLE users
+(
+	id SERIAL PRIMARY KEY,
+	username CHARACTER VARYING(20),
+	email CHARACTER VARYING(20) NOT NULL,
+	age INTEGER
+);
+
+
+
+
+INSERT INTO users (username, email, age)
+VALUES 
+	('tester', 'tester@gmail.com', 23),
+	(' ', 'gamer@gmail.com', 35),
+	('tester2', 'tester2@gmail.com', 44),
+	('tester3', 'tester3@gmail.com', 55);
+	
+
+SELECT *
+FROM users;
+
+
+-- When entering data into any column, we need to apply specific validations to the data we are inputting.
+-- For example, age can not be negative.
+
+INSERT INTO users(username, email, age)
+VALUES
+	('gamer3', 'gamer3@gmail.com',-22);
+
+
+SELECT *
+FROM users;
+
+-- As we see, in these conditions we can enter negative numbers into the age column.
+-- What we want is to prevent entering negative numbers into the age column by using 'CHECK' constraints.
+-- There are 2 ways to set 'CHECK' constraints to the specific columns :
+-- First one is when we create table, and the second one is
+
+ALTER TABLE users
+ADD CHECK (age > 18);
+
+-- Output : ERROR:  check constraint "users_age_check" of relation "users" is violated by some row
+
+DELETE FROM users
+WHERE id = 5
+RETURNING *;
+
+SELECT *
+FROM users;
+
+
+ALTER TABLE users
+ADD CHECK (age > 18);
+
+
+INSERT INTO users(username, email, age)
+VALUES
+	('gamer3','gamer3@gmail.com', 15);
+
+-- ERROR:  new row for relation "users" violates check constraint "users_age_check"
+-- DETAIL:  Failing row contains (6, gamer3, gamer3@gmail.com, 15).
+
+
+INSERT INTO users(username, email, age)
+VALUES 
+	('gamer3','gamer3@gmail.com',19);

@@ -8,6 +8,7 @@
        \l veya \list veritabanlarını gösterir
        \dt veritabanında bulunan tabloları listeler
        \d table_name tablo detaylarını gösterir
+       \c database_name veya \connect database_name ile istediğimiz database'e bağlanabiliriz
 
 
 -- CTRL + C  ve sonrasında ENTER yeniden sorgu yazmamızı sağlar.
@@ -46,12 +47,12 @@
  first_name  | character varying(45)       |                      | not null            |
  last_name   | character varying(45)       |                      | not null            |
  last_update | timestamp without time zone |                      | not null            | now()
-¦ndeksler:
-    "actor_pkey" PRIMARY KEY, btree (actor_id)
-    "idx_actor_last_name" btree (last_name)
-Referans veren:
-    TABLE "film_actor" CONSTRAINT "film_actor_actor_id_fkey" FOREIGN KEY (actor_id) REFERENCES actor(actor_id) ON UPDATE CASCADE ON DELETE RESTRICT
-Tetikleyiciler(Triggers):
-    last_updated BEFORE UPDATE ON actor FOR EACH ROW EXECUTE FUNCTION last_updated()
+
+
+-- Aşağı ve yukarı ok tuşları ile daha önce yazılmış sorgular arasında geçiş yapılabilir.
+
+SELECT COUNT(*)
+FROM actor
+WHERE first_name LIKE 'A%' AND last_name 'G%';
 
 

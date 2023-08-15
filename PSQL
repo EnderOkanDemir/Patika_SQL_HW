@@ -1,0 +1,7 @@
+postgres=# help
+PostgreSQL'in komut satırı arabirimi olan psql'i kullanıyorsunuz.
+Komutlar:  \copyright dağıtım koşulları için
+       \h SQL komutları hakkında yardım için
+       \? psql dahili komutlarının yardımı için
+       \g ya da noktalı virgül:  sorguyu çalıştırmak için
+       \q çıkmak için

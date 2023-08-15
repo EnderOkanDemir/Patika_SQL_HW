@@ -1,7 +1,38 @@
-postgres=# help
-PostgreSQL'in komut satırı arabirimi olan psql'i kullanıyorsunuz.
-Komutlar:  \copyright dağıtım koşulları için
+-- postgres=# help
+-- PostgreSQL'in komut satırı arabirimi olan psql'i kullanıyorsunuz.
+-- Komutlar:  \copyright dağıtım koşulları için
        \h SQL komutları hakkında yardım için
        \? psql dahili komutlarının yardımı için
        \g ya da noktalı virgül:  sorguyu çalıştırmak için
        \q çıkmak için
+       \l veya \list veritabanlarını gösterir
+       \dt veritabanında bulunan tabloları listeler
+
+
+-- CTRL + C  ve sonrasında ENTER yeniden sorgu yazmamızı sağlar.
+
+-- Varsayılan olarak postgres veri tabanına bağlı olduğumuz için shell üzerinde göreceğimiz komut postgres=# olacaktır.
+
+-- Database değiştirmek için \connect name_of_database sorgusu yazılır
+-- postgres=# \connect dvdrental
+Şu anda "dvdrental" veritabanına "postgres" kullanıcısı ile bağlısınız.
+
+-- dvdrental=# \dt
+              Nesnelerin listesi
+  Ìema  |      Ad²      | Veri tipi |  Sahibi
+--------+---------------+-----------+----------
+ public | actor         | tablo     | postgres
+ public | address       | tablo     | postgres
+ public | category      | tablo     | postgres
+ public | city          | tablo     | postgres
+ public | country       | tablo     | postgres
+ public | customer      | tablo     | postgres
+ public | film          | tablo     | postgres
+ public | film_actor    | tablo     | postgres
+ public | film_category | tablo     | postgres
+ public | inventory     | tablo     | postgres
+ public | language      | tablo     | postgres
+ public | payment       | tablo     | postgres
+ public | rental        | tablo     | postgres
+ public | staff         | tablo     | postgres
+ public | store         | tablo     | postgres

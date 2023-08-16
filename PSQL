@@ -70,3 +70,10 @@ SELECT * FROM film
 WHERE (title ILIKE('%a%a%')) AND (length > 100) AND (replacement_cost > 15 AND replacement_cost < 25) AND (rental_rate = 2.99);
 
 
+-- T ile başlayan filmlerin kaç farklı dakikaya sahip uzunlukları vardır?
+
+SELECT COUNT(DISTINCT length)
+FROM film
+WHERE title LIKE 'T%';
+
+

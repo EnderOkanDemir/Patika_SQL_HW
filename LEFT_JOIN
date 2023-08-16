@@ -57,3 +57,25 @@ LEFT JOIN author ON author.id = book.author_id
 WHERE first_name is NOT NULL ;
 
 
+SELECT title, first_name, last_name
+FROM book
+LEFT JOIN author ON author.id = book.author_id
+WHERE first_name is NOT NULL
+ORDER BY title;
+
+
+SELECT title, first_name, last_name
+FROM book
+LEFT JOIN author ON author.id = book.author_id
+WHERE first_name is NOT NULL
+ORDER BY author.first_name;
+
+or,
+
+SELECT title, first_name, last_name
+FROM book
+LEFT JOIN author ON author.id = book.author_id
+WHERE first_name is NOT NULL
+ORDER BY first_name;
+
+

@@ -75,5 +75,5 @@ WHERE (title ILIKE('%a%a%')) AND (length > 100) AND (replacement_cost > 15 AND r
 SELECT COUNT(DISTINCT length)
 FROM film
 WHERE title LIKE 'T%';
-
+output : 37
 

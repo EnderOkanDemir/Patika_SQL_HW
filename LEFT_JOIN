@@ -47,3 +47,13 @@ FROM book
 LEFT JOIN author ON author.id = book.author_id;
 
 -- There will be null values in the first_name and last_name columns because we are adding data to the book table but not to the author table.
+
+
+-- If we don't want to the null values we can write the query with INNER JOIN or like following,
+
+SELECT title, first_name, last_name
+FROM book
+LEFT JOIN author ON author.id = book.author_id
+WHERE first_name is NOT NULL ;
+
+

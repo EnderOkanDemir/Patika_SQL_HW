@@ -1,6 +1,7 @@
 SELECT title, first_name, last_name
 FROM author
-INNER JOIN book ON book.author_id = author.id;
+INNER JOIN book 
+ON book.author_id = author.id;
 
 -- When we use an INNER JOIN to combine two tables, the output will display the intersection of these two tables.
 -- We cannot see the row that exists in only one table as output unless it also exists in both tables.
@@ -11,14 +12,16 @@ INNER JOIN book ON book.author_id = author.id;
 
 SELECT first_name, last_name, title
 FROM author
-LEFT JOIN book ON author.id = book.author_id;
+LEFT JOIN book 
+ON author.id = book.author_id;
 
 -- 'author' is the first table and it places on the left, 'book' is the second table and places on the right
 
 
 SELECT title, first_name, last_name
 FROM book
-LEFT JOIN author ON author.id = book.author_id;
+LEFT JOIN author 
+ON author.id = book.author_id;
 
 -- 'book' is the first table and it places on the left, 'author' is the second table and places on the right
 
@@ -44,7 +47,8 @@ VALUES
 
 SELECT title, first_name, last_name
 FROM book
-LEFT JOIN author ON author.id = book.author_id;
+LEFT JOIN author 
+ON author.id = book.author_id;
 
 -- There will be null values in the first_name and last_name columns because we are adding data to the book table but not to the author table.
 
@@ -53,20 +57,23 @@ LEFT JOIN author ON author.id = book.author_id;
 
 SELECT title, first_name, last_name
 FROM book
-LEFT JOIN author ON author.id = book.author_id
+LEFT JOIN author 
+ON author.id = book.author_id
 WHERE first_name is NOT NULL ;
 
 
 SELECT title, first_name, last_name
 FROM book
-LEFT JOIN author ON author.id = book.author_id
+LEFT JOIN author 
+ON author.id = book.author_id
 WHERE first_name is NOT NULL
 ORDER BY title;
 
 
 SELECT title, first_name, last_name
 FROM book
-LEFT JOIN author ON author.id = book.author_id
+LEFT JOIN author 
+ON author.id = book.author_id
 WHERE first_name is NOT NULL
 ORDER BY author.first_name;
 
@@ -74,7 +81,8 @@ or,
 
 SELECT title, first_name, last_name
 FROM book
-LEFT JOIN author ON author.id = book.author_id
+LEFT JOIN author 
+ON author.id = book.author_id
 WHERE first_name is NOT NULL
 ORDER BY first_name;
 
@@ -82,7 +90,8 @@ or,
 
 SELECT book.title, author.first_name, author.last_name
 FROM book
-LEFT JOIN author ON author.id = book.author_id
+LEFT JOIN author 
+ON author.id = book.author_id
 WHERE first_name is NOT NULL
 ORDER BY first_name;
 

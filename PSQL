@@ -56,3 +56,17 @@ FROM actor
 WHERE first_name LIKE 'A%' AND last_name 'G%';
 
 
+SELECT *
+FROM film
+WHERE (length BETWEEN 100 AND 140) AND (rental_rate IN (0.99, 4.99));
+
+
+-- title 2 tane a/A harfi içersin
+-- film uzunluğu 100 dakikadan fazla olsun
+-- replacement_cost 15'ten büyük ve 25'den küçük olsun
+-- rental_rate 2.99 olsun
+
+SELECT * FROM film
+WHERE (title ILIKE('%a%a%')) AND (length > 100) AND (replacement_cost > 15 AND replacement_cost < 25) AND (rental_rate = 2.99);
+
+

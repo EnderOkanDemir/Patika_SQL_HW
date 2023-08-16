@@ -1,0 +1,10 @@
+SELECT title, first_name, last_name
+FROM author
+INNER JOIN book ON book.author_id = author.id;
+
+-- When we use an INNER JOIN to combine two tables, the output will display the intersection of these two tables.
+-- We cannot see the row that exists in only one table as output unless it also exists in both tables.
+-- When we use a LEFT JOIN to combine two tables, the output will display the table on the left first, followed by matching it with the second table. 
+-- When we use a LEFT JOIN to combine two tables, the output will display the table on the left first, and then match it with the second table. 
+-- This means we will see the all rows of the table at left, but we won't see the all rows of the tables we are combining.
+-- This means we will see the all rows of the table at left, but we won't see the rows that exist in table two and don't exist in table one.

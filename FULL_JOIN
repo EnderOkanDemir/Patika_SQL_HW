@@ -59,4 +59,28 @@ ON author.id = book.author_id;
 11	  [null]                                                                  [null]            [null]      [null]     "Alyse"	        "Lamort"	      "alamort5@flavors.me"	          "2013-06-23"
 2	    [null]                                                                  [null]            [null]      [null]     "Sabahattin"	    "Ali"	          "sabhattin@ali.com"	            "1914-07-11"
 
+SELECT *
+FROM book
+FULL JOIN author 
+ON author.id = book.author_id;
 
+
+SELECT *
+FROM book
+FULL OUTER JOIN author 
+ON author.id = book.author_id;
+
+-- FULL JOIN and FULL OUTER JOIN are the same.
+
+-- Both of these queries produce the same output for us.
+SELECT *
+FROM book
+FULL JOIN author 
+ON author.id = book.author_id
+WHERE (author.id IS NOT NULL AND book.author_id IS NOT NULL) ;
+
+
+SELECT *
+FROM book
+INNER JOIN author 
+ON author.id = book.author_id;

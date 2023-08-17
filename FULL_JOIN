@@ -58,3 +58,5 @@ ON author.id = book.author_id;
 20  	"Gülün Adı"	                                                            466	              44					[null]     [null]           [null]          [null]                           [null]   
 11	  [null]                                                                  [null]            [null]      [null]     "Alyse"	        "Lamort"	      "alamort5@flavors.me"	          "2013-06-23"
 2	    [null]                                                                  [null]            [null]      [null]     "Sabahattin"	    "Ali"	          "sabhattin@ali.com"	            "1914-07-11"
+
+

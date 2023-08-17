@@ -72,7 +72,7 @@ ON author.id = book.author_id;
 
 -- FULL JOIN and FULL OUTER JOIN are the same.
 
--- Both of these queries produce the same output for us.
+-- Both of these queries below produce the same output for us.
 SELECT *
 FROM book
 FULL JOIN author 
@@ -84,3 +84,16 @@ SELECT *
 FROM book
 INNER JOIN author 
 ON author.id = book.author_id;
+
+-- The following query will bring the data that doesn't match.
+
+SELECT *
+FROM book
+FULL JOIN author 
+ON author.id = book.author_id
+WHERE (author.id IS NULL OR book.author_id IS NULL) ;
+
+"id"	  "title"        	"page_number"	    "author_id"	    "id-2"	    "first_name"	        "last_name"	    "email"	"birthday"
+20	    "Gülün Adı"	    466	               4                4					[null]                [null]          [null] 
+11	    [null]          [null]            [null]          [null]      "Alyse"	              "Lamort"	      "alamort5@flavors.me"	"2013-06-23"
+2	      [null]          [null]            [null]          [null]      "Sabahattin"	        "Ali"	          "sabhattin@ali.com"	"1914-07-11"

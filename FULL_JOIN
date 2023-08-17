@@ -1,0 +1,60 @@
+-- FULL JOIN brings and combines the whole data from both tables Table 1 and Table 2.
+-- If there aren't common data in the common column to match the tables then it fills the blanks with NULL.
+
+SELECT author.first_name, author.last_name, book.title
+FROM author
+FULL JOIN book 
+ON author.id = book.author_id;
+
+SELECT author.first_name, author.last_name, book.title
+FROM author
+FULL JOIN book 
+ON author.id = book.author_id
+ORDER BY author.first_name;
+
+"first_name"    "last_name"	    "title"
+"Haruki"	      "Murakami"	    "White Banners"
+"Emrah Safa"	  "Gürkan"      	"Saving Shiloh"
+"Orhan"         "Pamuk"        	"Abe Lincoln in Illinois"
+"Haruki"	      "Murakami"    	"Apache Territory"
+"Carilyn"      	"Roblou"	      "Out 1: Spectre"
+"Zygmunt"	      "Bauman"	      "Trials of Muhammed Ali, The"
+"Emrah Safa"  	"Gürkan"	      "B.U.S.T.E.D (Everybody Loves Sunshine) (Busted)"
+"Carilyn"	      "Roblou"	      "Father Sergius (Otets Sergiy)"
+"Conni"	        "Fidelus"	      "It Started in Naples"
+"Halide Edip"	  "Adıvar"	      "Thirty Seconds Over Tokyo"
+"Carilyn"	      "Roblou"	      "Return to Homs, The"
+"Conni"	        "Fidelus"	      "Cutie Honey"
+"Haruki"	      "Murakami"	    "Jackass 3.5"
+"Wendeline"     "Yakuntsov"	    "Baby On Board"
+"Wendeline"    	"Yakuntsov"	    "Making Plans for Lena (Non ma fille, tu n'iras pas danser)"
+[null]          [null]          "Gülün Adı"
+"Alyse"	        "Lamort"        [null]  
+"Sabahattin"	  "Ali"           [null]  
+
+
+SELECT *
+FROM book
+FULL JOIN author 
+ON author.id = book.author_id;
+
+
+"id"  "title"	                                                              "page_number"	      "author_id"	"id-2"	  "first_name"	    "last_name"	    "email"	                        "birthday"
+4	    "White Banners"	                                                        62	               1	          1	       "Haruki"	        "Murakami"	    "haruki@murakami.com"	          "1948-11-07"
+5	    "Saving Shiloh"	                                                        580	               10	          10	     "Emrah Safa"	    "Gürkan"	      "emrah@gurkan.com"            	"1980-01-01"
+6	    "Abe Lincoln in Illinois"	                                              105	               3            3	       "Orhan"	        "Pamuk"        	"orhan@pamuk.com"	              "1950-04-14"
+7	    "Apache Territory"	                                                    286	               1	          1	       "Haruki"	        "Murakami"	    "haruki@murakami.com"	          "1948-11-07"
+8	    "Out 1: Spectre"	                                                      402	               9	          9	       "Carilyn"	      "Roblou"	      "croblou3@symantec.com"	
+9    	"Trials of Muhammed Ali, The"	                                          164                5	          5        "Zygmunt"	      "Bauman"	      "zygmunt@bauman.com"           	"1911-07-12"
+10	  "B.U.S.T.E.D (Everybody Loves Sunshine) (Busted)"                      	84	               10	          10	     "Emrah Safa"    	"Gürkan"	      "emrah@gurkan.com"	            "1980-01-01"
+11	  "Father Sergius (Otets Sergiy)"                                        	265                9	          9	       "Carilyn"	      "Roblou"	      "croblou3@symantec.com"	
+12	  "It Started in Naples"	                                                838	               8	          8        "Conni"	        "Fidelus"	      "cfidelus2@blogspot.com"	      "1976-04-09"
+13	  "Thirty Seconds Over Tokyo"	                                            586	               4	          4	       "Halide Edip"	  "Adıvar"	      "halide@edip.com"	              "1884-07-11"
+14	  "Return to Homs, The"	                                                  580	               9	          9	       "Carilyn"	      "Roblou"	      "croblou3@symantec.com"	
+15	  "Cutie Honey"	                                                          788                8	          8        "Conni"	        "Fidelus"	      "cfidelus2@blogspot.com"	      "1976-04-09"
+16	  "Jackass 3.5"	                                                          834                1	          1	       "Haruki"	        "Murakami"	    "haruki@murakami.com"	          "1948-11-07"
+17	  "Baby On Board"	                                                        339	               7	          7	       "Wendeline"	    "Yakuntsov"	    "wyakuntsov1@bbb.org"	          "1944-11-29"
+18  	"Making Plans for Lena (Non ma fille, tu n'iras pas danser)"	          375	               7	          7	       "Wendeline"	    "Yakuntsov"	    "wyakuntsov1@bbb.org"	          "1944-11-29"
+20  	"Gülün Adı"	                                                            466	              44					[null]     [null]           [null]          [null]                           [null]   
+11	  [null]                                                                  [null]            [null]      [null]     "Alyse"	        "Lamort"	      "alamort5@flavors.me"	          "2013-06-23"
+2	    [null]                                                                  [null]            [null]      [null]     "Sabahattin"	    "Ali"	          "sabhattin@ali.com"	            "1914-07-11"

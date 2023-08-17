@@ -24,3 +24,9 @@ SELECT author.first_name, author.last_name, book.title
 FROM book
 LEFT JOIN author 
 ON author.id = book.author_id;
+
+SELECT author.first_name, author.last_name, book.title
+FROM author
+RIGHT JOIN book 
+ON author.id = book.author_id
+ORDER BY author.first_name;

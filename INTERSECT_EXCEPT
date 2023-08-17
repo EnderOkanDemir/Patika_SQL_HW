@@ -1,0 +1,28 @@
+-- The INTERSECT function helps us to call the intersection row(s) of two tables.
+-- The INTERSECT function allows us to retrieve the rows that are common to two tables.
+
+-- We can utilize the words 'bring, call, retrieve, return' when we mention the output of a query.
+-- We can use the words 'bring, call, retrieve, return' to refer to the output of a query
+
+(
+SELECT *
+FROM book
+ORDER BY page_number DESC
+LIMIT 10
+)
+INTERSECT
+(
+SELECT *
+FROM book
+ORDER BY title
+LIMIT 10
+);
+
+
+"id"	  "title"	                                                        "page_number"	      "author_id"
+17	    "Baby On Board"	                                                339	                 7
+12	    "It Started in Naples"	                                        838	                 8
+18	    "Making Plans for Lena (Non ma fille, tu n'iras pas danser)"	  375	                 7
+20	    "Gülün Adı"	                                                    466	                 44
+16	    "Jackass 3.5"	                                                  834	                 1
+15	    "Cutie Honey"	                                                  788	                 8

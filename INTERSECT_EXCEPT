@@ -72,3 +72,6 @@ LIMIT 5
 14	      "Return to Homs, The"	             580	               9
 
 -- The EXCEPT function helps us find the rows that exist in the first query but do not exist in the second query.
+-- Between these two queries, there is one intersecting row. Therefore, even if we use 'LIMIT 5', the query will bring 4 output rows.
+
+-- The rules of the 'UNION' function also apply to the 'EXCEPT' formula, which requires the same number of columns and the same data types.

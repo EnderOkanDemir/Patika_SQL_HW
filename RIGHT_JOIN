@@ -1,0 +1,26 @@
+SELECT author.first_name, author.last_name, book.title
+FROM book
+RIGHT JOIN author 
+ON author.id = book.author_id;
+
+-- A RIGHT JOIN brings the second table's data first.
+-- In this query, 'book' is considered the first table, and 'author' is considered the second table.
+
+SELECT author.first_name, author.last_name, book.title
+FROM book
+RIGHT OUTER JOIN author 
+ON author.id = book.author_id;
+
+-- RIGHT JOIN and RIGHT OUTER JOUN are the same
+
+-- We can get the same result from LEFT JOIN and RIGHT JOIN if we change the order of tables.
+
+SELECT author.first_name, author.last_name, book.title
+FROM author
+RIGHT JOIN book 
+ON author.id = book.author_id;
+
+SELECT author.first_name, author.last_name, book.title
+FROM book
+LEFT JOIN author 
+ON author.id = book.author_id;

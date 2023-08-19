@@ -1,0 +1,30 @@
+SELECT first_name, last_name
+FROM author
+WHERE id =
+(
+	SELECT id
+	FROM book
+	WHERE title = 'Apache Territory'
+);
+
+
+SELECT first_name, last_name
+FROM author
+WHERE id =
+(
+	SELECT id
+	FROM book
+	WHERE title = 'Apache Territory' OR title = 'White Banners' OR title = 'Trials of Muhammed Ali, The'
+);
+
+-- ERROR:  more than one row returned by a subquery used as an expression
+-- If we want to use the all subqueries' output as input for the first SELECT query, we should use ANY function before the subqueries
+
+SELECT first_name, last_name
+FROM author
+WHERE id = ANY
+(
+	SELECT id
+	FROM book
+	WHERE title = 'Apache Territory' OR title = 'White Banners' OR title = 'Trials of Muhammed Ali, The'
+);

@@ -1,13 +1,16 @@
+***FIRST QUERY***
 SELECT *
 FROM book
 WHERE page_number > 466;
--- In this query the page_number is a static valule
+-- In this query the page_number is a static value
 
+
+***SECOND QUERY***
 SELECT page_number
 FROM book
 WHERE title = 'Gülün Adı';
 
-
+***SUBQUERY EXAMPLE***
 SELECT *
 FROM book
 WHERE page_number > 
@@ -17,4 +20,4 @@ FROM book
 WHERE title = 'Gülün Adı'
 )
 ;
--- In this query the page_number is a dynamic value.
+-- In this query, the page_number is a dynamic value.

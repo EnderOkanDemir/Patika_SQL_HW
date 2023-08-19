@@ -1,0 +1,20 @@
+SELECT *
+FROM book
+WHERE page_number > 466;
+-- In this query the page_number is a static valule
+
+SELECT page_number
+FROM book
+WHERE title = 'Gülün Adı';
+
+
+SELECT *
+FROM book
+WHERE page_number > 
+(
+SELECT page_number
+FROM book
+WHERE title = 'Gülün Adı'
+)
+;
+-- In this query the page_number is a dynamic value.

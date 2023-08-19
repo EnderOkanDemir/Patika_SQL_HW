@@ -39,3 +39,20 @@ WHERE replacement_cost =
 
 
 4. payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
+
+SELECT customer.first_name,customer.last_name, payment.amount 
+FROM customer
+INNER JOIN payment 
+ON payment.customer_id = customer.customer_id
+WHERE amount =
+(
+	SELECT MAX(amount)
+	FROM payment
+);
+
+
+SELECT customer.first_name, customer.last_name, SUM(payment.amount) AS total_payment
+FROM customer
+INNER JOIN payment ON payment.customer_id = customer.customer_id
+GROUP BY customer.first_name, customer.last_name
+ORDER BY total_payment DESC;

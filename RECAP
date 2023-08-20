@@ -1,0 +1,18 @@
+-- 1. İsminde en az 4 tane e veya E bulunan kaç film vardır?
+SELECT COUNT(title)
+FROM film
+WHERE title ILIKE('%e%e%e%e%');
+
+output = 34
+
+
+SELECT title
+FROM film
+WHERE title ILIKE('%e%e%e%e%');
+-- We can retrieve the names of films whose titles contain exactly four 'e' letters using this query.
+
+
+-- 2. Kategori isimlerini ve kategori başına düşen film sayısını yazınız.
+-- 3. En çok film bulunan rating kategorisi hangisidir?
+-- 4. Film tablosunda 'K' karakteri ile başlayan en uzun ve raplacement_cost en az olan 3 filmi sıralayınız.
+-- 5. En çok alışveriş yapan müşterinin adı nedir?

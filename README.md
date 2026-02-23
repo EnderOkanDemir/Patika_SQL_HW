@@ -2,4 +2,4 @@
 
 # Patika SQL Course
 
-In this section, I share the assignments I completed in Patika's PostgreSQL training.
+PostgreSQL-based SQL homework solutions including DDL, DML, JOIN operations and aggregation queries.
